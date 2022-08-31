@@ -1,2 +1,2 @@
 *__pycache__*
-*.bin*
+detr-resnet-50/pytorch_model.bin
