@@ -12,11 +12,13 @@ def plot_image(image, bounding_boxes):
 
 @app.get('/')
 def get_root():
-    return {'message': 'Welcome to object detection API using Detr from Facebook AI Research!'}
+    return {'message': 'Welcome to object detection API using DETR from Facebook AI Research!'}
 
-@app.post('/object_detection/')
+@app.post('/detect_object/')
 async def predict_api(data: UploadFile = File(...)):
+
     extension = data.filename.split(".")[-1] in ("jpg", "jpeg", "png")
+    print(data.filename)
     if not extension:
         return "Image must be jpg, jpeg or png format!"
     image = read_image(await data.read())

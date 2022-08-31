@@ -3,5 +3,7 @@
 Pillow == 9.2.0
 fastapi == 0.81.0
 requests == 2.28.1
+streamlit == 1.12.2
 torch == 1.12.1
 transformers == 4.22.0.dev0
+uvicorn == 0.18.3

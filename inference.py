@@ -24,7 +24,7 @@ def predict(image):
         # keep detections with score > 0.9
         if score > 0.9:
             object = model.config.id2label[label.item()]
-            confident_result = {object: {'box': box, 'score': score}}
+            confident_result = {object: {'box': box, 'score': round(score.item(), 3)}}
             confident_results.append(confident_result)
     return confident_results
     
@@ -32,6 +32,5 @@ if __name__ == '__main__':
     file = '/Users/namtrinh/Desktop/cat.jpeg'
     image = Image.open(file)
     confident_results = predict(image)
-
     print(confident_results)
         
